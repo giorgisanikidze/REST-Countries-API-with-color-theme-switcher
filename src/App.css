@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.country-list {
+  display: grid;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 45px;
+  padding-top: 24px;
+  background-color: #FAFAFA;
+}
+@media (min-width: 700px) {
+  .country-list{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .country-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
