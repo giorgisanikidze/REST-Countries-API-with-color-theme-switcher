@@ -1,7 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Country, Header, SearchFilter } from './components';
+import { Header, SearchFilter, CountryList } from './components';
 
 
 
@@ -13,7 +13,6 @@ function App() {
   let [day, setDay] = useState(true);
   let [filterDisplay, setFilterDisplay] = useState(false);
   let [countries, setCountries] = useState([]);
-
   let [filt, setFilt] = useState('all');
 
 
@@ -67,13 +66,7 @@ function App() {
     <div className="App">
       <Header day={day} setDay={setDay } />
       <SearchFilter day={day} filterDisplay={filterDisplay} setFilt={ setFilt} filt={filt} setFilterDisplay={setFilterDisplay} />
-      <div className='country-list' style={{backgroundColor: day ? '#FAFAFA' : '#202C36'}}>
-        {filterFunc().map((country, index) => {         
-          return (
-            <Country day={day} key={index} country={country } />
-          )
-        })}
-      </div>
+      <CountryList filterFunc={filterFunc} day={day} />
     </div>
   );
 }
