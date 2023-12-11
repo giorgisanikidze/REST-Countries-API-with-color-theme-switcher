@@ -7,7 +7,7 @@ const Country = (props) => {
             <div className='stats' >
                 <h3 style={{color: props.day ? '#111517' : '#FFF'}}>Population: <span>{ props.country.population}</span></h3>
                 <h3 style={{color: props.day ? '#111517' : '#FFF'}}>Region: <span>{props.country.region }</span></h3>
-                <h3 style={{color: props.day ? '#111517' : '#FFF'}}>capital: <span>{props.country.capital }</span></h3>
+                <h3 style={{ color: props.day ? '#111517' : '#FFF' }}>capital: <span>{props.country.capital}</span></h3>
             </div>
           </div>
     )
