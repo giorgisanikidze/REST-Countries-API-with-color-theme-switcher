@@ -19,13 +19,29 @@ const SearchFilter = (props) => {
                 </div>
                 <ul  className='list' style={{display: props.filterDisplay ? 'flex': 'none', background: props.day ? '#FFF' : '#2B3844', color: props.day ? '#111517' : '#FFF'}}>
                 <li onClick={() => {
+                    props.setFilt('all')
+                    props.setFilterDisplay(false)
+                }}>All</li>
+                <li onClick={() => {
                     props.setFilt('africa')
-
+                    props.setFilterDisplay(false)
                 }}>Africa</li>
-                <li onClick={() => {props.setFilt('america')}}>America</li>
-                <li onClick={() => {props.setFilt('asia')}}>Asia</li>
-                <li onClick={() => {props.setFilt('europa')}}>Europa</li>
-                <li onClick={() => {props.setFilt('oceania')}}>Oceania</li>
+                <li onClick={() => {
+                    props.setFilt('america')
+                    props.setFilterDisplay(false)
+                }}>America</li>
+                <li onClick={() => {
+                    props.setFilterDisplay(false)
+                    props.setFilt('asia')
+                }}>Asia</li>
+                <li onClick={() => {
+                    props.setFilt('europa')
+                    props.setFilterDisplay(false)
+                }}>Europa</li>
+                <li onClick={() => {
+                    props.setFilt('oceania')
+                    props.setFilterDisplay(false)
+                }}>Oceania</li>
                 </ul>        
                 </div>
             </div>
