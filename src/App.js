@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Home, Detail} from './components';
+import {Header, Home, Detail} from './components';
 
 
 
@@ -26,7 +26,6 @@ function App() {
   useEffect(() => {
     getCountries()
   }, [])
-console.log(countries)
 
   const filterFunc = () => {
     if (filt === 'africa') {
@@ -58,7 +57,7 @@ console.log(countries)
     }
     else {
       return countries.filter((country) =>
-        country.name.toLowerCase().includes(filt.toLocaleLowerCase()))
+        country.name.common.toLowerCase().includes(filt.toLocaleLowerCase()))
     }
   }
 
@@ -66,15 +65,15 @@ console.log(countries)
  
 
 
-console.log(countries)
 
   
   return (
     <BrowserRouter>
+        <Header day={day} setDay={setDay} />
       <Routes>
-        <Route path="/" element={<Home day={day} setDay={setDay}  filterDisplay={filterDisplay} setFilt={setFilt} filt={filt} setFilterDisplay={setFilterDisplay} filterFunc={filterFunc}/>} />
+        <Route path="/" exact element={<Home day={day} setDay={setDay}  filterDisplay={filterDisplay} setFilt={setFilt} filt={filt} setFilterDisplay={setFilterDisplay} filterFunc={filterFunc}/>} />
 
-        <Route path='/detail' element={<Detail day={day} setDay={setDay} />} />
+        <Route path="/country/:code" element={<Detail day={day} setDay={setDay} />} />
 
       </Routes>
     </BrowserRouter>

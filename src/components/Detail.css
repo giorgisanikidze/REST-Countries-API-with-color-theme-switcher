@@ -1,0 +1,119 @@
+.country-detail{
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+.back{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    padding: 6px 24px;
+    border-radius: 2px;
+    background: #FFF;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
+    margin-bottom: 64px;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+}
+
+.country-name{
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+.specs{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.specs-left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.specs-left p, .specs-right p{
+    color: #111517;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+.specs-left span, .specs-right span{
+    font-weight: 300;
+}
+
+.border-countries{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+.border-countries p{
+    color: #111517;
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin-top: 34px;
+}
+.countries{
+    display: flex;
+    gap: 10px;
+}
+.countries span{
+    width: 96px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 2px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.10);
+    text-align: center;
+}
+
+
+@media (min-width: 700px) {
+    .country-detail{
+        max-width: 50%;
+    }
+    .country-name{
+        font-size: 32px;
+    }
+    .specs p{
+        font-size: 24px;
+    
+    }
+}
+
+@media (min-width: 1440px) {
+    .country-detail{
+        height: 100vh;
+        padding-left: 80px;
+        padding-right: 80px;
+        max-width: 100%;
+    }
+    .middle{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 144px;
+    }
+    .middle-right{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .middle img{
+        width: 50%;
+    }
+    .specs{
+        flex-direction: row;
+        gap: 100px;
+    }
+    .country-name{
+        margin-bottom: 23px;
+    }
+    
+}
