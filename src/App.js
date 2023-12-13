@@ -27,6 +27,7 @@ function App() {
     getCountries()
   }, [])
 
+  
   const filterFunc = () => {
     if (filt === 'africa') {
       return countries.filter((country) =>
@@ -45,7 +46,6 @@ function App() {
       return countries.filter((country) =>
         country.region === 'Europe'
       )
-
     }
     else if (filt === 'oceania') {
       return countries.filter((country) =>
@@ -60,22 +60,16 @@ function App() {
         country.name.common.toLowerCase().includes(filt.toLocaleLowerCase()))
     }
   }
-
-
- 
-
-
-
   
+
+
   return (
     <BrowserRouter>
         <Header day={day} setDay={setDay} />
       <Routes>
         <Route path="/" exact element={<Home day={day} setDay={setDay}  filterDisplay={filterDisplay} setFilt={setFilt} filt={filt} setFilterDisplay={setFilterDisplay} filterFunc={filterFunc}/>} />
-
-        <Route path="/country/:code" element={<Detail day={day} setDay={setDay} />} />
-
-      </Routes>
+        <Route path="/country/:code" element={<Detail countries={countries} day={day} setDay={setDay} />} />
+        </Routes>
     </BrowserRouter>
   );
 }

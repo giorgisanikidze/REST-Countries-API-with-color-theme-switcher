@@ -15,7 +15,7 @@ const SearchFilter = (props) => {
             <div className='filter'>
                 <div style={{background: props.day ? '#FFF' : '#2B3844'}} onClick={() => {props.setFilterDisplay(!props.filterDisplay)}}>
                 <h3 style={{color: props.day ? '#111517' : '#FFF'}}>Filter by Region</h3>
-                <img src={arrow } alt=''/>
+                <img style={{transform: props.filterDisplay ? 'rotate(180deg)' : 'none'}} src={arrow } alt=''/>
                 </div>
                 <ul  className='list' style={{display: props.filterDisplay ? 'flex': 'none', background: props.day ? '#FFF' : '#2B3844', color: props.day ? '#111517' : '#FFF'}}>
                 <li onClick={() => {
